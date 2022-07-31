@@ -39,7 +39,23 @@ public:
     //Returns current amount of books in our library
     int return_size();
 
+    //Shows title of a book
+    void show_title(int number);
 
+    //Shows number of a book
+    void show_number(int number);
+
+    //Get a book number from person to borrow it or return it
+    int get_a_number();
+
+    //Recommend a book for user based on his favourite category
+    void recommend_books();
+
+    //Get a selected book to borrow it to user
+    Book get_a_book(int number);
+
+    //Returns a book from person to our library
+    void take_back_book(Book book);
 
 };
 

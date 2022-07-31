@@ -22,7 +22,13 @@ void Library_commands::add_book()
 
 void Library_commands::remove_book(int number)
 {
-    list_of_books.erase(list_of_books.begin() + number);
+    for(int it = 0; it < return_size(); it++)
+    {
+        if (list_of_books[it].book_number == number)
+        {
+            list_of_books.erase(list_of_books.begin() + it);
+        }
+    }
 }
 
 void Library_commands::check_book(int number) const
@@ -57,4 +63,64 @@ std::string Library_commands::select_category()
 int Library_commands::return_size()
 {
     return static_cast<int>(list_of_books.size());
+}
+
+void Library_commands::show_title(int number)
+{
+    std::cout << list_of_books[number].title;
+}
+
+void Library_commands::show_number(int number)
+{
+    std::cout << list_of_books[number].book_number << std::endl;
+}
+
+void Library_commands::recommend_books()
+{
+    std::cout << "What is your favourite category of books?: " << std::endl;
+
+    std::string category = select_category();
+
+    for(int it = 0; it < return_size(); it++)
+    {
+        if (list_of_books[it].category == category)
+        {
+            std::cout << list_of_books[it].title << " it's number is " << list_of_books[it].book_number << std::endl;
+        }
+    }
+
+}
+
+Book Library_commands::get_a_book(int number)
+{
+    Book book;
+
+    for(int it = 0; it < return_size(); it++)
+    {
+        if (list_of_books[it].book_number == number)
+        {
+            book.title = list_of_books[it].title;
+            book.book_number = list_of_books[it].book_number;
+            book.number_of_pages = list_of_books[it].number_of_pages;
+            book.category = list_of_books[it].category;
+        }
+    }
+
+    return book;
+}
+
+int Library_commands::get_a_number()
+{
+    int number;
+
+    std::cout << "What is the number of a book?: " << std::endl;
+
+    std::cin >> number;
+
+    return number;
+}
+
+void Library_commands::take_back_book(Book book)
+{
+    list_of_books.push_back(book);
 }
