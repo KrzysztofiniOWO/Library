@@ -57,5 +57,17 @@ public:
     //Returns a book from person to our library
     void take_back_book(Book book);
 
+    //Return out book title
+    std::string return_title(int idx);
+
+    //Return our book number
+    int return_book_number(int idx);
+
+    //Return number of pages of our book
+    int return_number_of_pages(int idx);
+
+    //Return category of our book
+    std::string return_category(int idx);
+
 };
 

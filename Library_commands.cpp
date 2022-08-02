@@ -8,7 +8,7 @@ void Library_commands::add_book()
     std::cout << "What is the title of book? (words divided by _) : " << std::endl;
     std::cin >> book.title;
 
-    std::cout << "Assign an id number to our book [8 digits]: " << std::endl;
+    std::cout << "Assign an id number to our book: " << std::endl;
     std::cin >> book.book_number;
 
     std::cout << "How many pages does the book have?: " << std::endl;
@@ -81,6 +81,8 @@ void Library_commands::recommend_books()
 
     std::string category = select_category();
 
+    std::cout << std::endl;
+
     for(int it = 0; it < return_size(); it++)
     {
         if (list_of_books[it].category == category)
@@ -89,6 +91,7 @@ void Library_commands::recommend_books()
         }
     }
 
+    std::cout << std::endl;
 }
 
 Book Library_commands::get_a_book(int number)
@@ -113,7 +116,7 @@ int Library_commands::get_a_number()
 {
     int number;
 
-    std::cout << "What is the number of a book?: " << std::endl;
+    std::cout << "What is the number of a book you want to borrow?: " << std::endl;
 
     std::cin >> number;
 
@@ -123,4 +126,24 @@ int Library_commands::get_a_number()
 void Library_commands::take_back_book(Book book)
 {
     list_of_books.push_back(book);
+}
+
+std::string Library_commands::return_title(int idx)
+{
+    return list_of_books[idx].title;
+}
+
+int Library_commands::return_book_number(int idx)
+{
+    return list_of_books[idx].book_number;
+}
+
+int Library_commands::return_number_of_pages(int idx)
+{
+    return list_of_books[idx].number_of_pages;
+}
+
+std::string Library_commands::return_category(int idx)
+{
+    return list_of_books[idx].category;
 }

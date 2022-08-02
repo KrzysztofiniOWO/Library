@@ -26,6 +26,22 @@ public:
     //Removes book from our backpack
     void remove_book(int idx);
 
+    //Return size of our backpack
+    int return_size();
+
+    //Return out book title
+    std::string return_title(int idx);
+
+    //Return our book number
+    int return_book_number(int idx);
+
+    //Return number of pages of our book
+    int return_number_of_pages(int idx);
+
+    //Return category of our book
+    std::string return_category(int idx);
+
+
 
 };
 

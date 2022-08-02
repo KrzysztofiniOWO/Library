@@ -32,3 +32,28 @@ void Person::remove_book(int idx)
 {
     backpack.erase(backpack.begin()+idx);
 }
+
+int Person::return_size()
+{
+    return static_cast<int>(backpack.size());
+}
+
+std::string Person::return_title(int idx)
+{
+    return backpack[idx].title;
+}
+
+int Person::return_book_number(int idx)
+{
+    return backpack[idx].book_number;
+}
+
+int Person::return_number_of_pages(int idx)
+{
+    return backpack[idx].number_of_pages;
+}
+
+std::string Person::return_category(int idx)
+{
+    return backpack[idx].category;
+}

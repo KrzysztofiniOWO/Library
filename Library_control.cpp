@@ -1,10 +1,11 @@
 #include "Library_control.h"
 #include <iostream>
 
-Library_control::Library_control(Library_commands &library_commands, Library_viewer &library_viewer, Person &person):
+Library_control::Library_control(Library_commands &library_commands, Library_viewer &library_viewer, Person &person, File_manager &file_manager):
 library_commands(library_commands),
 library_viewer(library_viewer),
-person(person)
+person(person),
+file_manager(file_manager)
 {}
 
 void Library_control::library_controller()
@@ -12,6 +13,9 @@ void Library_control::library_controller()
     std::cout << "****************************************" << std::endl;
     std::cout << "*        Welcome in our library        *" << std::endl;
     std::cout << "****************************************" << std::endl << std::endl;
+
+    file_manager.load_library();
+    file_manager.load_backpack();
 
     while(on)
     {
@@ -56,11 +60,13 @@ void Library_control::library_controller()
                 break;
 
             case 6:
+                file_manager.save_library();
+                file_manager.save_backpack();
                 on = false;
                 break;
 
             default:
-                std::cout << "There is no such option. Press teh correct number." << std::endl;
+                std::cout << "There is no such option. Press the correct number." << std::endl;
                 break;
             
         }
