@@ -24,11 +24,12 @@ void Library_control::library_controller()
         std::cout << "****************************************" << std::endl;
         std::cout << "*       What are you going to do?      *" << std::endl;
         std::cout << "*       1. Check  what books we have   *" << std::endl;
-        std::cout << "*       2. Borrow a book               *" << std::endl;
-        std::cout << "*       3. Return a book               *" << std::endl;
-        std::cout << "*       4. Want a recommendation?      *" << std::endl;
-        std::cout << "*       5. Gift a book to library      *" << std::endl;
-        std::cout << "*       6. Exit the library            *" << std::endl;
+        std::cout << "*       2. Check  what books you have  *" << std::endl;
+        std::cout << "*       3. Borrow a book               *" << std::endl;
+        std::cout << "*       4. Return a book               *" << std::endl;
+        std::cout << "*       5. Want a recommendation?      *" << std::endl;
+        std::cout << "*       6. Gift a book to library      *" << std::endl;
+        std::cout << "*       7. Exit the library            *" << std::endl;
         std::cout << "****************************************" << std::endl << std::endl;
 
         std::cin >> option;
@@ -40,26 +41,30 @@ void Library_control::library_controller()
                 break;
 
             case 2:
+                library_viewer.show_person_collection();
+                break;
+
+            case 3:
                 number = library_commands.get_a_number();
                 person.borrow_book(library_commands.get_a_book(number));
                 library_commands.remove_book(number);
                 break;
 
-            case 3:
+            case 4:
                 number = library_commands.get_a_number();
                 library_commands.take_back_book(person.return_book(number));
                 person.remove_book(number);
                 break;
 
-            case 4:
+            case 5:
                 library_commands.recommend_books();
                 break;
 
-            case 5:
+            case 6:
                 library_commands.add_book();
                 break;
 
-            case 6:
+            case 7:
                 file_manager.save_library();
                 file_manager.save_backpack();
                 on = false;

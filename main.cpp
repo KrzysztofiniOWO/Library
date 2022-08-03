@@ -13,7 +13,7 @@ int main() {
 
     File_manager file_manager(library_commands, person);
 
-    Library_viewer library_viewer(library_commands);
+    Library_viewer library_viewer(library_commands, person);
 
     Library_control library_control(library_commands, library_viewer, person, file_manager);
 

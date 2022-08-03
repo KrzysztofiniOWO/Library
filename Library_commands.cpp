@@ -116,7 +116,7 @@ int Library_commands::get_a_number()
 {
     int number;
 
-    std::cout << "What is the number of a book you want to borrow?: " << std::endl;
+    std::cout << "What is the number of a book?: " << std::endl;
 
     std::cin >> number;
 

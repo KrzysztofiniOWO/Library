@@ -13,10 +13,10 @@ Book Person::return_book(int number)
 {
     Book book;
 
-    for(int it = 0; it < library_commands.return_size(); it++)
+    for(int it = 0; it < return_size(); it++)
     {
 
-        if (library_commands.get_a_number() == number)
+        if (return_book_number(it) == number)
         {
             book.title = backpack[it].title;
             book.book_number = backpack[it].book_number;
