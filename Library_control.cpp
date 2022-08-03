@@ -10,9 +10,9 @@ file_manager(file_manager)
 
 void Library_control::library_controller()
 {
-    std::cout << "****************************************" << std::endl;
-    std::cout << "*        Welcome in our library        *" << std::endl;
-    std::cout << "****************************************" << std::endl << std::endl;
+    std::cout << "************************************************************" << std::endl;
+    std::cout << "*                  Welcome in our library                  *" << std::endl;
+    std::cout << "************************************************************" << std::endl << std::endl;
 
     file_manager.load_library();
     file_manager.load_backpack();
@@ -21,16 +21,16 @@ void Library_control::library_controller()
     {
         int option, number;
 
-        std::cout << "****************************************" << std::endl;
-        std::cout << "*       What are you going to do?      *" << std::endl;
-        std::cout << "*       1. Check  what books we have   *" << std::endl;
-        std::cout << "*       2. Check  what books you have  *" << std::endl;
-        std::cout << "*       3. Borrow a book               *" << std::endl;
-        std::cout << "*       4. Return a book               *" << std::endl;
-        std::cout << "*       5. Want a recommendation?      *" << std::endl;
-        std::cout << "*       6. Gift a book to library      *" << std::endl;
-        std::cout << "*       7. Exit the library            *" << std::endl;
-        std::cout << "****************************************" << std::endl << std::endl;
+        std::cout << "************************************************************" << std::endl;
+        std::cout << "*                 What are you going to do?                *" << std::endl;
+        std::cout << "*                 1. Check  what books we have             *" << std::endl;
+        std::cout << "*                 2. Check  what books you have            *" << std::endl;
+        std::cout << "*                 3. Borrow a book                         *" << std::endl;
+        std::cout << "*                 4. Return a book                         *" << std::endl;
+        std::cout << "*                 5. Want a recommendation?                *" << std::endl;
+        std::cout << "*                 6. Gift a book to library                *" << std::endl;
+        std::cout << "*                 7. Exit the library                      *" << std::endl;
+        std::cout << "************************************************************" << std::endl << std::endl;
 
         std::cin >> option;
 
@@ -57,7 +57,7 @@ void Library_control::library_controller()
                 break;
 
             case 5:
-                library_commands.recommend_books();
+                library_viewer.recommend_books();
                 break;
 
             case 6:

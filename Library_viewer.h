@@ -22,6 +22,9 @@ public:
     //Shows titles and numbers of book in persons backpack
     void show_person_collection();
 
+    //Recommend a book to person based on his favourite category
+    void recommend_books();
+
 
 
 };

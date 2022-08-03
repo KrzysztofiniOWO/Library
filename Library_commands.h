@@ -42,9 +42,6 @@ public:
     //Get a book number from person to borrow it or return it
     int get_a_number();
 
-    //Recommend a book for user based on his favourite category
-    void recommend_books();
-
     //Get a selected book to borrow it to user
     Book get_a_book(int number);
 

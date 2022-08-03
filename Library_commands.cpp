@@ -65,25 +65,6 @@ int Library_commands::return_size()
     return static_cast<int>(list_of_books.size());
 }
 
-void Library_commands::recommend_books()
-{
-    std::cout << "What is your favourite category of books?: " << std::endl;
-
-    std::string category = select_category();
-
-    std::cout << std::endl;
-
-    for(int it = 0; it < return_size(); it++)
-    {
-        if (list_of_books[it].category == category)
-        {
-            std::cout << list_of_books[it].title << " it's number is " << list_of_books[it].book_number << std::endl;
-        }
-    }
-
-    std::cout << std::endl;
-}
-
 Book Library_commands::get_a_book(int number)
 {
     Book book;
