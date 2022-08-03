@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Library_commands.h"
 #include "Library_viewer.h"
 #include "Library_control.h"

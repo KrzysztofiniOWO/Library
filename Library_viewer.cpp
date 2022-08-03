@@ -10,9 +10,9 @@ void Library_viewer::show_collection()
 {
     for(int it = 0; it < library_commands.return_size(); it++)
     {
-        library_commands.show_title(it);
+        std::cout << library_commands.return_title(it);
         std::cout << "  -  number of this book is: ";
-        library_commands.show_number(it);
+        std::cout << library_commands.return_book_number(it) << std::endl;
     }
 
     std::cout << std::endl;

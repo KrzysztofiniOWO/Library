@@ -65,16 +65,6 @@ int Library_commands::return_size()
     return static_cast<int>(list_of_books.size());
 }
 
-void Library_commands::show_title(int number)
-{
-    std::cout << list_of_books[number].title;
-}
-
-void Library_commands::show_number(int number)
-{
-    std::cout << list_of_books[number].book_number << std::endl;
-}
-
 void Library_commands::recommend_books()
 {
     std::cout << "What is your favourite category of books?: " << std::endl;

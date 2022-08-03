@@ -39,12 +39,6 @@ public:
     //Returns current amount of books in our library
     int return_size();
 
-    //Shows title of a book
-    void show_title(int number);
-
-    //Shows number of a book
-    void show_number(int number);
-
     //Get a book number from person to borrow it or return it
     int get_a_number();
 
